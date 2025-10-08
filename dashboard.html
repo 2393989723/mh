@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户中心 - 公益美化平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">游戏账号商城</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="shop.html">购买账号</a></li>
+                    <li><a href="dashboard.html" class="active">用户中心</a></li>
+                    <li><a href="#" id="logoutBtn">退出</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <div class="container">
+                <h2>用户中心</h2>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>账户信息</h3>
+                        <div class="user-info">
+                            <p><strong>用户名:</strong> <span id="userName">-</span></p>
+                            <p><strong>邮箱:</strong> <span id="userEmail">-</span></p>
+                            <p><strong>钻石余额:</strong> <span id="userDiamonds">0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>充值钻石</h3>
+                        <form id="rechargeForm">
+                            <div class="form-group">
+                                <label for="rechargeAmount">充值金额（元）</label>
+                                <input type="number" id="rechargeAmount" name="amount" min="10" required>
+                            </div>
+                            <button type="submit" class="btn-primary">生成充值订单</button>
+                        </form>
+                        <div id="orderInfo" class="order-info" style="display: none;">
+                            <p><strong>订单号:</strong> <span id="orderId"></span></p>
+                            <p><strong>充值金额:</strong> <span id="orderAmount"></span> 元</p>
+                            <p>请复制订单号并联系客服完成支付</p>
+                            <button id="copyOrderBtn" class="btn-secondary">复制订单号</button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>联系客服</h3>
+                        <p>客服QQ: 123456789</p>
+                        <p>客服微信: game_account_service</p>
+                        <p>工作时间: 9:00-24:00</p>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>购买历史</h3>
+                        <div id="purchaseHistory" class="history-list">
+                            <!-- 购买历史将在这里动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 游戏账号商城 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
